@@ -33,7 +33,8 @@ steps:
   displayName: 'Copy project files'
 
 - script: |
-  ls $(Build.ArtifactStagingDirectory)
+    ls $(Build.ArtifactStagingDirectory)
+  displayName: list artifact
 
 - task: AzureCLI@2
   inputs:
