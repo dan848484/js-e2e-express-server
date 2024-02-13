@@ -46,4 +46,7 @@ steps:
         --container-name $(CONTAINER) \
         --sas-token "$(CONTAINER_SAS)" \
         --file "$(Build.ArtifactStagingDirectory)/public/client.html" \
-        --name "template"
+        --name "template" \
+        --overwrite
+
+
