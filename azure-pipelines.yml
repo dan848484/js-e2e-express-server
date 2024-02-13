@@ -6,6 +6,9 @@
 trigger:
 - main
 
+variables:
+  - group: environment-variable-for-zawatrial-test
+
 pool:
   vmImage: ubuntu-latest
 
@@ -35,3 +38,11 @@ steps:
     targetPath: '$(Build.ArtifactStagingDirectory)'
     publishLocation: 'pipeline'
   displayName: 'Publish npm artifact'
+
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '$(SERVICE_CONNECTION)'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az storage blob upload --account-name $(STORAGE_ACCOUNT) --container-name $(CONTAINER) --file $(Build.ArtifactStagingDirector) --name filesToUpload
