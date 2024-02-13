@@ -43,6 +43,7 @@ steps:
     inlineScript: |
       az storage blob upload \
         --account-name $(STORAGE_ACCOUNT) \
-        --name $(CONTAINER) \
+        --container-name $(CONTAINER) \
         --sas-token "$(CONTAINER_SAS)" \
         --file "$(Build.ArtifactStagingDirectory)/public/client.html" \
+        --name "template"
