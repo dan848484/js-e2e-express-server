@@ -43,7 +43,6 @@ steps:
     inlineScript: |
       az storage blob upload \
         --account-name $(STORAGE_ACCOUNT) \
-        --container-name $(CONTAINER) \
-        --sas-token "$(SAS)" \
+        --name $(CONTAINER) \
+        --sas-token "$(CONTAINER_SAS)" \
         --file "$(Build.ArtifactStagingDirectory)/public/client.html" \
-        --name "filesToUpload"
