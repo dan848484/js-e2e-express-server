@@ -42,4 +42,4 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      az storage blob upload --account-name $(STORAGE_ACCOUNT) --container-name $(CONTAINER) --sas-token $(SAS)  --file $(Build.ArtifactStagingDirectory)/public/client.html --name filesToUpload
+      az storage blob upload --account-name $(STORAGE_ACCOUNT) --container-name $(CONTAINER) --sas-token $(SAS) --file $(Build.ArtifactStagingDirectory)/public/client.html --name filesToUpload
