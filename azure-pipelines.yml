@@ -39,4 +39,4 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      az storage blob upload --account-name $(STORAGE_ACCOUNT) --container-name $(CONTAINER) --file $(Build.ArtifactStagingDirector) --name filesToUpload
+      az storage blob upload --account-name $(STORAGE_ACCOUNT) --container-name $(CONTAINER) --file $(Build.ArtifactStagingDirectory) --name filesToUpload
